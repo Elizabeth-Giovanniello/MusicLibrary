@@ -9,7 +9,7 @@ const DisplayMusic = (props) => {
 
     function searchByKeyword(keyword){
         let displayedMusic = props.musicLibrary.filter(function(song){
-            return song.title.toLowerCase().includes(keyword) || song.artist.includes(keyword) || song.album.includes(keyword) || song.genre.includes(keyword);
+            return song.title.toLowerCase().includes(keyword) || song.artist.toLowerCase().includes(keyword) || song.album.toLowerCase().includes(keyword) || song.genre.toLowerCase().includes(keyword);
         })
         setMusicToDisplay(displayedMusic);
     }
