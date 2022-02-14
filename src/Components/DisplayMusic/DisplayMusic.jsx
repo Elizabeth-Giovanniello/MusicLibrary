@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import SearchBar from '../SearchBar/SearchBar';
+import PageHeader from '../PageHeader/PageHeader';
 import MusicTable from "../MusicTable/MusicTable";
 
 const DisplayMusic = (props) => {
@@ -52,7 +52,7 @@ const DisplayMusic = (props) => {
 
     return ( 
         <div>
-            <SearchBar searchByKeyword={searchByKeyword} searchByGenre={searchByGenre} searchByArtist={searchByArtist} searchByAlbum={searchByAlbum} searchByTitle={searchByTitle} searchByReleaseDate={searchByReleaseDate}/>
+            <PageHeader searchByKeyword={searchByKeyword} searchByGenre={searchByGenre} searchByArtist={searchByArtist} searchByAlbum={searchByAlbum} searchByTitle={searchByTitle} searchByReleaseDate={searchByReleaseDate}/>
             <MusicTable musicToDisplay={musicToDisplay}/>
         </div>
     );

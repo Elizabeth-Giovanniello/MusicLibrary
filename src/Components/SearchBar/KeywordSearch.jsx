@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const SearchBar = (props) => {
+const KeywordSearch = (props) => {
 
     const [searchTerm, setSearchTerm] = useState('');
 
@@ -18,4 +18,5 @@ const SearchBar = (props) => {
     );
 }
  
-export default SearchBar;
+export default KeywordSearch;
+
