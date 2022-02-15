@@ -13,7 +13,7 @@ const PageHeader = (props) => {
     const [searchBar, setSearchBar] = useState(<KeywordSearch searchByKeyword={props.searchByKeyword}/>)
 
     function displaySearchBar(){
-//TODO: when you get back, copy KeywordSearch and make search bar components for each of the search types. also add a default here. then try calling this function where the switch case is in the return, and test.
+
         switch(searchType) {
             case 'keyword':
                 setSearchBar(<KeywordSearch searchByKeyword={props.searchByKeyword}/>)
@@ -37,14 +37,11 @@ const PageHeader = (props) => {
         }
     }
 
-    // handleSearchSelect(event, searchCategory){
-    //     event.preventDefault();
-    //     setSearchType(searchCategory);
-    // }
+  
 
     useEffect(()=>{
         displaySearchBar();
-      }, [])
+      }, [searchType])
 
 
 
