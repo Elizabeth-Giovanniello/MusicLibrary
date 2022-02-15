@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import DisplayMusic from './Components/DisplayMusic/DisplayMusic.jsx'
+import NavBar from './Components/NavBar/NavBar.jsx';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
 
   return (
     <div className="App">
+      <NavBar/>
       <DisplayMusic musicLibrary={musicLibrary}/>
     </div>
   );

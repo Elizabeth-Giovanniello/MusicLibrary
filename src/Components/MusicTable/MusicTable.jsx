@@ -1,11 +1,12 @@
 import React from 'react';
-import { Table } from 'react-bootstrap';
+import { Table, Container } from 'react-bootstrap';
 
 
 const DisplayMusic = (props) => {
 
     return ( 
-            <Table striped bordered size="sm" className="mx-5">
+        <Container className="mt-5">
+            <Table striped bordered size="sm">
                 <thead>
                     <tr>
                         <th>Title</th>
@@ -29,6 +30,7 @@ const DisplayMusic = (props) => {
                     })}
                 </tbody>
             </Table>
+        </Container>
     );
 }
  

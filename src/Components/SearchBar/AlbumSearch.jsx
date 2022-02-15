@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Button, Form, Row, Col } from 'react-bootstrap';
 
 const AlbumSearch = (props) => {
 
@@ -11,10 +12,16 @@ const AlbumSearch = (props) => {
     }
 
     return ( 
-        <form onSubmit={handleSubmit}>
-            <input type="text" placeholder="Search by album..." value={searchTerm} onChange={(event) => setSearchTerm(event.target.value)}/>
-            <button type="submit">Search</button>
-        </form>
+        <Form onSubmit={handleSubmit}>
+            <Row>
+                <Col>
+                    <Form.Control type="text" placeholder="Search by album..." value={searchTerm} onChange={(event) => setSearchTerm(event.target.value)}/>
+                </Col>
+                <Col>
+                    <Button type="submit">Search</Button>
+                </Col>
+            </Row>
+        </Form>
     );
 }
  

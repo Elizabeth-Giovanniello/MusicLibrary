@@ -5,7 +5,7 @@ import AlbumSearch from '../SearchBar/AlbumSearch';
 import ArtistSearch from '../SearchBar/ArtistSearch';
 import GenreSearch from '../SearchBar/GenreSearch';
 import ReleaseDateSearch from '../SearchBar/ReleaseDateSearch';
-import { Dropdown, DropdownButton } from 'react-bootstrap';
+import { Dropdown, DropdownButton, Container, Row, Col } from 'react-bootstrap';
 
 
 const PageHeader = (props) => {
@@ -47,19 +47,25 @@ const PageHeader = (props) => {
 
 
     return ( 
-        <div>
-            <DropdownButton title="Search Category">
-                <Dropdown.Item onClick={()=>{setSearchType('genre')}}>Genre</Dropdown.Item>
-                <Dropdown.Item onClick={()=>{setSearchType('keyword')}}>Keyword</Dropdown.Item>
-                <Dropdown.Item onClick={()=>{setSearchType('album')}}>Album</Dropdown.Item>
-                <Dropdown.Item onClick={()=>{setSearchType('title')}}>Title</Dropdown.Item>
-                <Dropdown.Item onClick={()=>{setSearchType('artist')}}>Artist</Dropdown.Item>
-                <Dropdown.Item onClick={()=>{setSearchType('release date')}}>Release Date</Dropdown.Item>
-            </DropdownButton>
-            <div>
-                {searchBar}
-            </div>
-        </div>
+        <Container className="mt-5">
+            <Row>
+                <Col>
+                <DropdownButton title="Search Category">
+                    <Dropdown.Item onClick={()=>{setSearchType('genre')}}>Genre</Dropdown.Item>
+                    <Dropdown.Item onClick={()=>{setSearchType('keyword')}}>Keyword</Dropdown.Item>
+                    <Dropdown.Item onClick={()=>{setSearchType('album')}}>Album</Dropdown.Item>
+                    <Dropdown.Item onClick={()=>{setSearchType('title')}}>Title</Dropdown.Item>
+                    <Dropdown.Item onClick={()=>{setSearchType('artist')}}>Artist</Dropdown.Item>
+                    <Dropdown.Item onClick={()=>{setSearchType('release date')}}>Release Date</Dropdown.Item>
+                </DropdownButton>
+                </Col>
+                <Col>
+                <div>
+                    {searchBar}
+                </div>
+                </Col>
+            </Row>
+        </Container>
     );
 }
  
