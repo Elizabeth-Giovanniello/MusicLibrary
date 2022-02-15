@@ -5,6 +5,7 @@ import AlbumSearch from '../SearchBar/AlbumSearch';
 import ArtistSearch from '../SearchBar/ArtistSearch';
 import GenreSearch from '../SearchBar/GenreSearch';
 import ReleaseDateSearch from '../SearchBar/ReleaseDateSearch';
+import { Dropdown, DropdownButton } from 'react-bootstrap';
 
 
 const PageHeader = (props) => {
@@ -47,17 +48,14 @@ const PageHeader = (props) => {
 
     return ( 
         <div>
-            <div className="dropdown">
-                <button type="button" className="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">Search Category</button>
-                <ul className="dropdown-menu">
-                    <li className="dropdown-item" onClick={()=>{setSearchType('genre')}}>Genre</li>
-                    <li className="dropdown-item" onClick={()=>{setSearchType('keyword')}}>Keyword</li>
-                    <li className="dropdown-item" onClick={()=>{setSearchType('album')}}>Album</li>
-                    <li className="dropdown-item" onClick={()=>{setSearchType('title')}}>Title</li>
-                    <li className="dropdown-item" onClick={()=>{setSearchType('artist')}}>Artist</li>
-                    <li className="dropdown-item" onClick={()=>{setSearchType('release date')}}>Release Date</li>
-                </ul>
-            </div>
+            <DropdownButton title="Search Category">
+                <Dropdown.Item onClick={()=>{setSearchType('genre')}}>Genre</Dropdown.Item>
+                <Dropdown.Item onClick={()=>{setSearchType('keyword')}}>Keyword</Dropdown.Item>
+                <Dropdown.Item onClick={()=>{setSearchType('album')}}>Album</Dropdown.Item>
+                <Dropdown.Item onClick={()=>{setSearchType('title')}}>Title</Dropdown.Item>
+                <Dropdown.Item onClick={()=>{setSearchType('artist')}}>Artist</Dropdown.Item>
+                <Dropdown.Item onClick={()=>{setSearchType('release date')}}>Release Date</Dropdown.Item>
+            </DropdownButton>
             <div>
                 {searchBar}
             </div>

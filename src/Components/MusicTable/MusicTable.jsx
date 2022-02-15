@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Table } from 'react-bootstrap';
+
 
 const DisplayMusic = (props) => {
 
     return ( 
-            <table>
+            <Table striped bordered size="sm" className="mx-5">
                 <thead>
                     <tr>
                         <th>Title</th>
@@ -26,7 +28,7 @@ const DisplayMusic = (props) => {
                         )
                     })}
                 </tbody>
-            </table>
+            </Table>
     );
 }
  
