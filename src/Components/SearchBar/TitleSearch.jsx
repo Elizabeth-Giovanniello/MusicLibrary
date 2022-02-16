@@ -18,7 +18,7 @@ const TitleSearch = (props) => {
                     <Form.Control type="text" placeholder="Search by title..." value={searchTerm} onChange={(event) => setSearchTerm(event.target.value)}/>
                 </Col>
                 <Col>
-                    <Button type="submit">Search</Button>
+                    <Button variant="danger" type="submit">Search</Button>
                 </Col>
             </Row>
         </Form>

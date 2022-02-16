@@ -16,10 +16,10 @@ const ReleaseDateSearch = (props) => {
         <Form onSubmit={handleSubmit}>
             <Row>
                 <Col>
-                    <Form.Control type="text" placeholder="Search by release date..." value={searchTerm} onChange={(event) => setSearchTerm(event.target.value)}/>
+                    <Form.Control type="text" placeholder="Search by year of release..." value={searchTerm} onChange={(event) => setSearchTerm(event.target.value)}/>
                 </Col>
                 <Col>
-                    <Button type="submit">Search</Button>
+                    <Button variant="danger" type="submit">Search</Button>
                 </Col>
             </Row>
         </Form>

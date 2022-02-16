@@ -49,8 +49,11 @@ const PageHeader = (props) => {
     return ( 
         <Container className="mt-5">
             <Row>
+                <h1 className="mb-5 text-center">Your Music Library</h1>
+            </Row>
+            <Row>
                 <Col>
-                <DropdownButton title="Search Category">
+                <DropdownButton variant="danger" title="Search Category">
                     <Dropdown.Item onClick={()=>{setSearchType('genre')}}>Genre</Dropdown.Item>
                     <Dropdown.Item onClick={()=>{setSearchType('keyword')}}>Keyword</Dropdown.Item>
                     <Dropdown.Item onClick={()=>{setSearchType('album')}}>Album</Dropdown.Item>
