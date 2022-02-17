@@ -17,16 +17,9 @@ const EditSongDetails = (props) => {
     const handleShow = () => setShow(true);
 
 
-    function resetForm(){
-        setTitle(props.song.title);
-        setArtist(props.song.artist);
-        setAlbum(props.song.album);
-        setGenre(props.song.genre);
-        setReleaseDate(props.song.release_date);
-    }
-
     function handleSubmit(event) {
         event.preventDefault();
+        handleClose();
         let editedSong = {
             title: title,
             artist: artist,
@@ -36,7 +29,6 @@ const EditSongDetails = (props) => {
         };
         console.log(editedSong)
         props.editSong(props.song.id, editedSong);
-        resetForm();
     }
 
     
@@ -45,7 +37,7 @@ const EditSongDetails = (props) => {
     return ( 
         <div>
             <Button variant="basic" onClick={handleShow}>
-                <PencilFill className="text-danger" size={40}/>
+                <PencilFill className="text-danger me-2" size={18}/>
                 Edit Song
             </Button>
             <Modal size="lg" centered show={show} onHide={handleClose}>
@@ -66,10 +58,12 @@ const EditSongDetails = (props) => {
                         <Form.Control className="mb-3" type="text" value={genre} onChange={(event) => setGenre(event.target.value)} required/>
                         <Form.Label>Release Date:</Form.Label>
                         <Form.Control className="mb-5" type="date" value={releaseDate} onChange={(event) => setReleaseDate(event.target.value)} required/>
-                        <Button variant="danger" type="submit" onClick={handleClose}>Submit changes</Button>
-                        <Button variant="danger" onClick={handleClose}>Cancel</Button>
                     </Form>
                 </Modal.Body>
+                <Modal.Footer>
+                        <Button variant="danger" type="submit" onClick={handleSubmit}>Submit changes</Button>
+                        <Button variant="danger" onClick={handleClose}>Cancel</Button>
+                </Modal.Footer>
             </Modal>
         </div>
     );

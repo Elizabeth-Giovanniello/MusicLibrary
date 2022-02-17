@@ -1,7 +1,7 @@
 import React from 'react';
 import { Table, Container, Button, DropdownButton, Dropdown } from 'react-bootstrap';
 import { ThreeDotsVertical, ThreeDots } from 'react-bootstrap-icons';
-import EditSongDetails from '../EditSongDetails/EditSongDetails';
+import OptionsMenu from '../OptionsMenu/OptionsMenu';
 
 
 const MusicTable = (props) => {
@@ -31,7 +31,7 @@ const MusicTable = (props) => {
                                 
                                 <tr key={index}>
                                     <td>
-                                        <EditSongDetails editSong={props.editSong} song={song}/>
+                                        <OptionsMenu editSong={props.editSong} song={song}/>
                                     {song.title}</td>
                                     <td>{song.artist}</td>
                                     <td>{song.album}</td>
