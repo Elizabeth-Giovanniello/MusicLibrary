@@ -11,29 +11,28 @@ import { Dropdown, DropdownButton, Container, Row, Col } from 'react-bootstrap';
 const PageHeader = (props) => {
 
     const [searchType, setSearchType] = useState('keyword');
-    const [searchBar, setSearchBar] = useState()
 
     function displaySearchBar(){
 
         switch(searchType) {
             case 'keyword':
-                setSearchBar(<KeywordSearch searchByKeyword={props.searchByKeyword}/>)
-                break;
+                return <KeywordSearch searchByKeyword={props.searchByKeyword}/>
+
             case 'genre':
-                setSearchBar(<GenreSearch searchByGenre={props.searchByGenre}/>)
-                break;
+                return <GenreSearch searchByGenre={props.searchByGenre}/>
+
             case 'album':
-                setSearchBar(<AlbumSearch searchByAlbum={props.searchByAlbum}/>)
-                break;
+                return <AlbumSearch searchByAlbum={props.searchByAlbum}/>
+
             case 'artist':
-                setSearchBar(<ArtistSearch searchByArtist={props.searchByArtist}/>)
-                break;
+                return <ArtistSearch searchByArtist={props.searchByArtist}/>
+
             case 'title':
-                setSearchBar(<TitleSearch searchByTitle={props.searchByTitle}/>)
-                break;
+                return <TitleSearch searchByTitle={props.searchByTitle}/>
+
             case 'release date':
-                setSearchBar(<ReleaseDateSearch searchByReleaseDate={props.searchByReleaseDate}/>)
-                break;
+                return <ReleaseDateSearch searchByReleaseDate={props.searchByReleaseDate}/>
+
             //default??
         }
     }
@@ -64,7 +63,7 @@ const PageHeader = (props) => {
                 </Col>
                 <Col>
                 <div>
-                    {searchBar}
+                    {displaySearchBar()}
                 </div>
                 </Col>
             </Row>
