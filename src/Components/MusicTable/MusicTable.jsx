@@ -2,9 +2,12 @@ import React from 'react';
 import { Table, Container } from 'react-bootstrap';
 
 
-const DisplayMusic = (props) => {
+const MusicTable = (props) => {
+
+    console.log(props.musicToDisplay);
 
     return ( 
+
         <Container className="mt-5">
             <Table striped bordered size="sm">
                 <thead>
@@ -24,7 +27,7 @@ const DisplayMusic = (props) => {
                                 <td>{song.artist}</td>
                                 <td>{song.album}</td>
                                 <td>{song.genre}</td>
-                                <td>{song.releaseDate}</td>
+                                <td>{song.release_date}</td>
                             </tr>
                         )
                     })}
@@ -34,4 +37,4 @@ const DisplayMusic = (props) => {
     );
 }
  
-export default DisplayMusic;
+export default MusicTable;

@@ -11,7 +11,7 @@ import { Dropdown, DropdownButton, Container, Row, Col } from 'react-bootstrap';
 const PageHeader = (props) => {
 
     const [searchType, setSearchType] = useState('keyword');
-    const [searchBar, setSearchBar] = useState(<KeywordSearch searchByKeyword={props.searchByKeyword}/>)
+    const [searchBar, setSearchBar] = useState()
 
     function displaySearchBar(){
 

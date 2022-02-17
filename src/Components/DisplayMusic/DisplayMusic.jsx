@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PageHeader from '../PageHeader/PageHeader';
 import MusicTable from "../MusicTable/MusicTable";
 
@@ -8,9 +8,16 @@ const DisplayMusic = (props) => {
 
     const [musicToDisplay, setMusicToDisplay] = useState(props.musicLibrary);
 
+
+    useEffect(() => {
+        setMusicToDisplay(props.musicLibrary);
+      }, [props.musicLibrary]);
+
+
+
     function searchByKeyword(keyword){
         let displayedMusic = props.musicLibrary.filter(function(song){
-            return song.title.toLowerCase().includes(keyword.toLowerCase()) || song.artist.toLowerCase().includes(keyword.toLowerCase()) || song.album.toLowerCase().includes(keyword.toLowerCase()) || song.genre.toLowerCase().includes(keyword.toLowerCase()) || song.releaseDate.includes(keyword);
+            return song.title.toLowerCase().includes(keyword.toLowerCase()) || song.artist.toLowerCase().includes(keyword.toLowerCase()) || song.album.toLowerCase().includes(keyword.toLowerCase()) || song.genre.toLowerCase().includes(keyword.toLowerCase()) || song.release_date.includes(keyword);
         })
         setMusicToDisplay(displayedMusic);
     }
@@ -45,7 +52,7 @@ const DisplayMusic = (props) => {
 
     function searchByReleaseDate(releaseDate){
         let displayedMusic = props.musicLibrary.filter(function(song){
-            return song.releaseDate.includes(releaseDate);
+            return song.release_date.includes(releaseDate);
         })
         setMusicToDisplay(displayedMusic);
     }
