@@ -1,14 +1,20 @@
 import React from 'react';
-import { Table, Container } from 'react-bootstrap';
+import { Table, Container, Button, DropdownButton, Dropdown } from 'react-bootstrap';
+import { ThreeDotsVertical, ThreeDots } from 'react-bootstrap-icons';
+import EditSongDetails from '../EditSongDetails/EditSongDetails';
 
 
 const MusicTable = (props) => {
 
+
+
+
+    
     console.log(props.musicToDisplay);
 
     return ( 
 
-        <Container className="mt-5">
+        
             <Table striped bordered size="sm">
                 <thead>
                     <tr>
@@ -22,18 +28,22 @@ const MusicTable = (props) => {
                 <tbody>
                     {props.musicToDisplay.map((song, index) => {
                         return (
-                            <tr key={index}>
-                                <td>{song.title}</td>
-                                <td>{song.artist}</td>
-                                <td>{song.album}</td>
-                                <td>{song.genre}</td>
-                                <td>{song.release_date}</td>
-                            </tr>
+                                
+                                <tr key={index}>
+                                    <td>
+                                        <EditSongDetails editSong={props.editSong} song={song}/>
+                                    {song.title}</td>
+                                    <td>{song.artist}</td>
+                                    <td>{song.album}</td>
+                                    <td>{song.genre}</td>
+                                    <td>{song.release_date}</td>
+                                </tr>
+                            
                         )
                     })}
                 </tbody>
             </Table>
-        </Container>
+
     );
 }
  

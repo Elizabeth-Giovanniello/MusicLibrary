@@ -30,6 +30,18 @@ function App() {
     getAllMusic();
   }
 
+  async function editSong(songID, song){
+
+    let response = await axios.put('http://127.0.0.1:8000/music/' + songID + '/', song)
+    .then(response => { 
+      console.log(response)
+    })
+    .catch(error => {
+        console.log(error.response)
+    });
+    getAllMusic();
+  }
+
 
 
 
@@ -37,7 +49,7 @@ function App() {
   return (
     <div className="App">
       <NavBar/>
-      <DisplayMusic musicLibrary={musicLibrary} addNewSong={addNewSong}/>
+      <DisplayMusic musicLibrary={musicLibrary} addNewSong={addNewSong} editSong={editSong}/>
     </div>
   );
 }

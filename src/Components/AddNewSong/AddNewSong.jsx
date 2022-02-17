@@ -66,7 +66,7 @@ const AddNewSong = (props) => {
                         <Form.Label>Release Date:</Form.Label>
                         <Form.Control className="mb-5" type="date" placeholder="Enter date of release" value={releaseDate} onChange={(event) => setReleaseDate(event.target.value)} required/>
                         <Button variant="danger" type="submit" onClick={handleClose}>Add Song</Button>
-                        <Button variant="danger" onClick={handleClose}>Close</Button>
+                        <Button variant="danger" onClick={handleClose}>Cancel</Button>
                     </Form>
                 </Modal.Body>
             </Modal>

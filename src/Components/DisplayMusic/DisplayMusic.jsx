@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PageHeader from '../PageHeader/PageHeader';
 import MusicTable from "../MusicTable/MusicTable";
 import AddNewSong from '../AddNewSong/AddNewSong';
+import { Container } from 'react-bootstrap';
 
 const DisplayMusic = (props) => {
 
@@ -67,8 +68,10 @@ const DisplayMusic = (props) => {
     return ( 
         <div>
             <PageHeader searchByKeyword={searchByKeyword} searchByGenre={searchByGenre} searchByArtist={searchByArtist} searchByAlbum={searchByAlbum} searchByTitle={searchByTitle} searchByReleaseDate={searchByReleaseDate}/>
-            <MusicTable musicToDisplay={musicToDisplay}/>
-            <AddNewSong addNewSong={props.addNewSong}/>
+            <Container className="mt-5">
+                <MusicTable musicToDisplay={musicToDisplay} editSong={props.editSong}/>
+                <AddNewSong addNewSong={props.addNewSong}/>
+            </Container>
         </div>
     );
 }
