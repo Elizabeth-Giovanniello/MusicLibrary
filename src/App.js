@@ -9,7 +9,7 @@ function App() {
 
     useEffect(()=>{
       getAllMusic();
-    }, [addNewSong()])
+    }, [])
 
   async function getAllMusic(){
     let response = await axios.get('http://127.0.0.1:8000/music/');
@@ -20,13 +20,17 @@ function App() {
 
   async function addNewSong(song){
 
-    await axios.post('http://127.0.0.1:8000/music/', song);
-
+    let response = await axios.post('http://127.0.0.1:8000/music/', song)
+    .then(response => { 
+      console.log(response)
+    })
+    .catch(error => {
+        console.log(error.response)
+    });
+    getAllMusic();
   }
 
-  useEffect(()=>{
-    addNewSong();
-  }, [])
+
 
 
 

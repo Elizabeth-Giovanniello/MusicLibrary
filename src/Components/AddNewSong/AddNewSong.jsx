@@ -17,6 +17,13 @@ const AddNewSong = (props) => {
     const handleShow = () => setShow(true);
 
 
+    function resetForm(){
+        setTitle("");
+        setArtist("");
+        setAlbum("");
+        setGenre("");
+        setReleaseDate("");
+    }
 
     function handleSubmit(event) {
         event.preventDefault();
@@ -25,14 +32,14 @@ const AddNewSong = (props) => {
             artist: artist,
             album: album,
             genre: genre,
-            releaseDate: releaseDate,
+            release_date: releaseDate,
         };
         console.log(newSong)
         props.addNewSong(newSong);
-        //not sure if we need to clear the text yet or not, as it's a modal... tbd
+        resetForm();
     }
 
-
+    
 
 
     return ( 
@@ -48,17 +55,20 @@ const AddNewSong = (props) => {
                 </Modal.Header>
                 <Modal.Body>
                     <Form onSubmit={handleSubmit}>
-                        <Form.Control type="text" placeholder="Song title" value={title} onChange={(event) => setTitle(event.target.value)} required/>
-                        <Form.Control type="text" placeholder="Artist" value={artist} onChange={(event) => setArtist(event.target.value)} required/>
-                        <Form.Control type="text" placeholder="Album" value={album} onChange={(event) => setAlbum(event.target.value)} required/>
-                        <Form.Control type="text" placeholder="Genre" value={genre} onChange={(event) => setGenre(event.target.value)} required/>
-                        <Form.Control type="date" placeholder="Release date" value={releaseDate} onChange={(event) => setReleaseDate(event.target.value)} required/>
+                        <Form.Label>Title:</Form.Label>
+                        <Form.Control className="mb-3" type="text" placeholder="Enter song title" value={title} onChange={(event) => setTitle(event.target.value)} required/>
+                        <Form.Label>Artist:</Form.Label>
+                        <Form.Control className="mb-3" type="text" placeholder="Enter name of artist" value={artist} onChange={(event) => setArtist(event.target.value)} required/>
+                        <Form.Label>Album:</Form.Label>
+                        <Form.Control className="mb-3" type="text" placeholder="Enter album name" value={album} onChange={(event) => setAlbum(event.target.value)} required/>
+                        <Form.Label>Genre:</Form.Label>
+                        <Form.Control className="mb-3" type="text" placeholder="Enter song genre" value={genre} onChange={(event) => setGenre(event.target.value)} required/>
+                        <Form.Label>Release Date:</Form.Label>
+                        <Form.Control className="mb-5" type="date" placeholder="Enter date of release" value={releaseDate} onChange={(event) => setReleaseDate(event.target.value)} required/>
+                        <Button variant="danger" type="submit" onClick={handleClose}>Add Song</Button>
+                        <Button variant="danger" onClick={handleClose}>Close</Button>
                     </Form>
                 </Modal.Body>
-                <Modal.Footer>
-                    <Button variant="danger" type="submit"></Button>
-                    <Button onClick={handleClose}>Close</Button>
-                </Modal.Footer>
             </Modal>
         </div>
     );
