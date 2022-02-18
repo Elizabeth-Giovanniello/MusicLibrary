@@ -69,7 +69,7 @@ const DisplayMusic = (props) => {
         <div>
             <PageHeader searchByKeyword={searchByKeyword} searchByGenre={searchByGenre} searchByArtist={searchByArtist} searchByAlbum={searchByAlbum} searchByTitle={searchByTitle} searchByReleaseDate={searchByReleaseDate}/>
             <Container className="mt-5">
-                <MusicTable musicToDisplay={musicToDisplay} editSong={props.editSong}/>
+                <MusicTable musicToDisplay={musicToDisplay} editSong={props.editSong} deleteSong={props.deleteSong}/>
                 <AddNewSong addNewSong={props.addNewSong}/>
             </Container>
         </div>

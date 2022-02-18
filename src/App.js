@@ -42,6 +42,18 @@ function App() {
     getAllMusic();
   }
 
+  async function deleteSong(songID, song){
+
+    let response = await axios.delete('http://127.0.0.1:8000/music/' + songID + '/', song)
+    .then(response => { 
+      console.log(response)
+    })
+    .catch(error => {
+        console.log(error.response)
+    });
+    getAllMusic();
+  }
+
 
 
 
@@ -49,7 +61,7 @@ function App() {
   return (
     <div className="App">
       <NavBar/>
-      <DisplayMusic musicLibrary={musicLibrary} addNewSong={addNewSong} editSong={editSong}/>
+      <DisplayMusic musicLibrary={musicLibrary} addNewSong={addNewSong} editSong={editSong} deleteSong={deleteSong}/>
     </div>
   );
 }

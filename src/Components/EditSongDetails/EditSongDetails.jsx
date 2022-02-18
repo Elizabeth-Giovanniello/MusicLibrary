@@ -36,10 +36,10 @@ const EditSongDetails = (props) => {
 
     return ( 
         <div>
-            <Button variant="basic" onClick={handleShow}>
-                <PencilFill className="text-danger me-2" size={18}/>
+            <p className="ps-3 m-0 pb-2 pt-2" onClick={handleShow}>
+                <PencilFill className="text-danger me-3" size={18}/>
                 Edit Song
-            </Button>
+            </p>
             <Modal size="lg" centered show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>

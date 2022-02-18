@@ -31,7 +31,7 @@ const MusicTable = (props) => {
                                 
                                 <tr key={index}>
                                     <td>
-                                        <OptionsMenu editSong={props.editSong} song={song}/>
+                                        <OptionsMenu editSong={props.editSong} deleteSong={props.deleteSong} song={song}/>
                                     {song.title}</td>
                                     <td>{song.artist}</td>
                                     <td>{song.album}</td>
