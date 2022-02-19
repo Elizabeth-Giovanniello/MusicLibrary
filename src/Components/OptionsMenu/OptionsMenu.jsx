@@ -13,8 +13,8 @@ const OptionsMenu = (props) => {
 
     return ( 
         <Dropdown drop='start'>
-            <Dropdown.Toggle variant="basic" className='float-start me-3 p-0'>
-                <ThreeDotsVertical className={'me-3 p-0' + (isHighlighted ? " text-danger" : " text-secondary")} onMouseEnter={()=>setIsHighlighted(true)} onMouseLeave={()=>setIsHighlighted(false)}></ThreeDotsVertical>
+            <Dropdown.Toggle variant="basic" className='float-end p-0'>
+                <ThreeDotsVertical className={'p-0' + (isHighlighted ? " text-danger" : " text-secondary")} onMouseEnter={()=>setIsHighlighted(true)} onMouseLeave={()=>setIsHighlighted(false)}></ThreeDotsVertical>
             </Dropdown.Toggle>
             <Dropdown.Menu className="p-0">
                 <Dropdown.Item className="p-0">

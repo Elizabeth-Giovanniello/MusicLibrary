@@ -3,3 +3,12 @@
 .dropdown-toggle::before {
     display: none !important; 
   }
+
+/* .dropdown-toggle {
+} */
+
+.dropstart {
+    right: -30px;
+    position: relative;
+    display: inline;
+}
