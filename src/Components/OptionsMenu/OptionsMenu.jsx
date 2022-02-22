@@ -12,7 +12,7 @@ const OptionsMenu = (props) => {
 
 
     return ( 
-        <Dropdown drop='start'>
+        <Dropdown drop='end'>
             <Dropdown.Toggle variant="basic" className='float-end p-0'>
                 <ThreeDotsVertical className={'p-0' + (isHighlighted ? " text-danger" : " text-secondary")} onMouseEnter={()=>setIsHighlighted(true)} onMouseLeave={()=>setIsHighlighted(false)}></ThreeDotsVertical>
             </Dropdown.Toggle>
