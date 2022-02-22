@@ -1,10 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import KeywordSearch from '../SearchBar/KeywordSearch';
-import TitleSearch from '../SearchBar/TitleSearch';
-import AlbumSearch from '../SearchBar/AlbumSearch';
-import ArtistSearch from '../SearchBar/ArtistSearch';
-import GenreSearch from '../SearchBar/GenreSearch';
-import ReleaseDateSearch from '../SearchBar/ReleaseDateSearch';
+import SearchBar from '../SearchBar/SearchBar';
 import { Dropdown, DropdownButton, Container, Row, Col } from 'react-bootstrap';
 
 
@@ -13,28 +8,14 @@ const PageHeader = (props) => {
     const [searchType, setSearchType] = useState('keyword');
 
     function displaySearchBar(){
-
-        switch(searchType) {
-            case 'keyword':
-                return <KeywordSearch searchByKeyword={props.searchByKeyword}/>
-
-            case 'genre':
-                return <GenreSearch searchByGenre={props.searchByGenre}/>
-
-            case 'album':
-                return <AlbumSearch searchByAlbum={props.searchByAlbum}/>
-
-            case 'artist':
-                return <ArtistSearch searchByArtist={props.searchByArtist}/>
-
-            case 'title':
-                return <TitleSearch searchByTitle={props.searchByTitle}/>
-
-            case 'release date':
-                return <ReleaseDateSearch searchByReleaseDate={props.searchByReleaseDate}/>
-
-            //default??
+        if (searchType == 'release_date'){
+            var searchPhrase = 'year of release'
         }
+        else{
+            var searchPhrase = searchType
+        }
+        let placeholderPhrase = "Search by " + searchPhrase + "..."
+        return <SearchBar searchByCategory={props.searchByCategory} category={searchType} placeholderPhrase={placeholderPhrase}/>
     }
 
   
@@ -53,12 +34,12 @@ const PageHeader = (props) => {
             <Row>
                 <Col>
                 <DropdownButton variant="danger" title="Search Category">
-                    <Dropdown.Item onClick={()=>{setSearchType('genre')}}>Genre</Dropdown.Item>
                     <Dropdown.Item onClick={()=>{setSearchType('keyword')}}>Keyword</Dropdown.Item>
+                    <Dropdown.Item onClick={()=>{setSearchType('genre')}}>Genre</Dropdown.Item>
                     <Dropdown.Item onClick={()=>{setSearchType('album')}}>Album</Dropdown.Item>
                     <Dropdown.Item onClick={()=>{setSearchType('title')}}>Title</Dropdown.Item>
                     <Dropdown.Item onClick={()=>{setSearchType('artist')}}>Artist</Dropdown.Item>
-                    <Dropdown.Item onClick={()=>{setSearchType('release date')}}>Release Date</Dropdown.Item>
+                    <Dropdown.Item onClick={()=>{setSearchType('release_date')}}>Release Date</Dropdown.Item>
                 </DropdownButton>
                 </Col>
                 <Col>

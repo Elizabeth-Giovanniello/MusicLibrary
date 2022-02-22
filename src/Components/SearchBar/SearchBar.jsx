@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { Button, Form, Row, Col } from 'react-bootstrap';
 
-const KeywordSearch = (props) => {
+const SearchBar = (props) => {
 
     const [searchTerm, setSearchTerm] = useState('');
 
     function handleSubmit(event){
         event.preventDefault();
-        props.searchByKeyword(searchTerm);
+        props.searchByCategory(props.category, searchTerm);
         setSearchTerm('');
     }
 
@@ -15,7 +15,7 @@ const KeywordSearch = (props) => {
         <Form onSubmit={handleSubmit}>
             <Row>
                 <Col>
-                    <Form.Control type="text" placeholder="Search by keyword..." value={searchTerm} onChange={(event) => setSearchTerm(event.target.value)}/>
+                    <Form.Control type="text" placeholder={props.placeholderPhrase} value={searchTerm} onChange={(event) => setSearchTerm(event.target.value)}/>
                 </Col>
                 <Col>
                     <Button variant="danger" type="submit">Search</Button>
@@ -25,5 +25,5 @@ const KeywordSearch = (props) => {
     );
 }
  
-export default KeywordSearch;
+export default SearchBar;
 
